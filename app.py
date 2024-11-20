@@ -88,22 +88,6 @@ else:
 
 #CALCULATING FOR THE METRICS DATA
 
-# CSS for border styling
-st.markdown(
-    """
-    <style>
-    .metric-container {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 10px;
-        margin-bottom: 15px;
-        background-color: #f9f9f9;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    }
-    </style>
-    """, 
-    unsafe_allow_html=True
-)
 
 metric1,metric2, metric3 = st.columns((3))
 with metric1:
