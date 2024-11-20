@@ -14,16 +14,16 @@ st.title(":bar_chart: JEOCO DASHBOARD")
 st.markdown('<style>div.block-container{padding-top :2rem;}</style>', unsafe_allow_html=True) #TITLE SPACING
 
 #DOWNLOADING NEW DATA SET
-f1 = st.file_uploader(':file_folder: Upload a file', type=(['csv','txt','xlsx', 'xls']))
+f1 = st.file_uploader(':file_folder: Upload a file', type=['csv','txt','xlsx', 'xls'])  
 
 #Check if file is not empty
 if f1 is not None:
     filename = f1.name
     st.write(filename)
 
-    df = pd.read_csv(filename, encoding="ISO-8859-1")
+    df = pd.read_csv(f1, encoding="ISO-8859-1")
 else:
-    df = pd.read_csv('sample - Superstore.csv')
+    df = pd.read_csv('sample - Superstore.csv', encoding="ISO-8859-1")
 
 col1, col2 = st.columns((2))
 df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
