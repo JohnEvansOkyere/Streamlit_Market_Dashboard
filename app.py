@@ -352,8 +352,8 @@ def send_email(to_email, subject, body, file_path=None):
 st.subheader("📧 Share this Dashboard via Email")
 with st.form(key="email_form"):
     to_email = st.text_input("Recipient Email Address", placeholder="Enter email address")
-    email_subject = st.text_input("Email Subject", value="Check out this awesome dashboard!")
-    email_body = st.text_area("Email Message", value="Hi there! I thought you might find this dashboard interesting.")
+    email_subject = st.text_input("Email Subject", value="")
+    email_body = st.text_area("Email Message", value="")
     file_upload = st.file_uploader("Attach File", type=["py", "csv", "txt", "xlsx", "pdf"])  # Limit types as needed
     send_email_button = st.form_submit_button("Send Email")
 
