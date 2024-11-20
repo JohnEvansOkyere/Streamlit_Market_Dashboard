@@ -89,24 +89,24 @@ else:
 #CALCULATING FOR THE METRICS DATA
 
 
-metric1,metric2, metric3 = st.columns((3))
-with metric1:
-    st.subheader("Total Quantity")
-    total_quatity = filtered_df["Quantity"].sum()
-    st.metric(label="Total Quantity", value=total_quatity,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
+# metric1,metric2, metric3 = st.columns((3))
+# with metric1:
+#     st.subheader("Total Quantity")
+#     total_quatity = filtered_df["Quantity"].sum()
+#     st.metric(label="Total Quantity", value=total_quatity,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
 
-with metric2:
-    st.subheader("Gross Revenue")
-    total_sales = filtered_df["Sales"].sum()
-    formatted_sales = millify(total_sales)
-    st.metric(label="Gross Revenue", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
+# with metric2:
+#     st.subheader("Gross Revenue")
+#     total_sales = filtered_df["Sales"].sum()
+#     formatted_sales = millify(total_sales)
+#     st.metric(label="Gross Revenue", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
-with metric3:
-    st.subheader("Gross Profit")
-    total_sales = filtered_df["Profit"].sum()
-    formatted_sales = millify(total_sales)
-    st.metric(label="Gross Profit", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
+# with metric3:
+#     st.subheader("Gross Profit")
+#     total_sales = filtered_df["Profit"].sum()
+#     formatted_sales = millify(total_sales)
+#     st.metric(label="Gross Profit", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
 
 
