@@ -23,7 +23,7 @@ if f1 is not None:
 
     df = pd.read_csv(f1, encoding="ISO-8859-1")
 else:
-    df = pd.read_csv('sample - Superstore.csv', encoding="ISO-8859-1")
+    df = pd.read_csv('data/sample - Superstore.csv', encoding="ISO-8859-1")
 
 col1, col2 = st.columns((2))
 df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
