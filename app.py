@@ -7,10 +7,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 #Page set up
-st.set_page_config(page_title='JEOCO DASHBOARD', page_icon=":bar_chart:", layout='wide')
+st.set_page_config(page_title='SAMPLE', page_icon=":bar_chart:", layout='wide')
 
 #Title
-st.title(":bar_chart: JEOCO DASHBOARD")
+st.title(":bar_chart: SAMPLE DASHBOARD")
 st.markdown('<style>div.block-container{padding-top :2rem;}</style>', unsafe_allow_html=True) #TITLE SPACING
 
 
@@ -24,7 +24,9 @@ if f1 is not None:
 
     df = pd.read_csv(f1, encoding="ISO-8859-1")
 else:
-    df = pd.read_csv('data/sample - Superstore.csv', encoding="ISO-8859-1")
+    st.info(":top: Upload a file!")
+    st.stop()
+    df = pd.read_csv( )
 
 col1, col2 = st.columns((2))
 df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
@@ -98,13 +100,13 @@ with metric1:
 
 
 with metric2:
-    st.subheader("Gross Revenue")
+    st.subheader(":dollar: Gross Revenue")
     total_sales = filtered_df["Sales"].sum()
     formatted_sales = millify(total_sales)
     st.metric(label="Gross Revenue", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
 with metric3:
-    st.subheader("Gross Profit")
+    st.subheader(":smile: Gross Profit")
     total_sales = filtered_df["Profit"].sum()
     formatted_sales = millify(total_sales)
     st.metric(label="Gross Profit", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
@@ -121,7 +123,7 @@ with col1:
 
 #CREATING A PLOT FOR REGION
 with col2:
-    st.subheader("Region wise Sales")
+    st.subheader(":earth_americas: Region wise Sales")
     fig = px.pie(filtered_df, values='Sales', names="Region", hole= 0.5)
     fig.update_traces(text = filtered_df["Region"], textposition = "outside")
     st.plotly_chart(fig, use_container_width=True)
