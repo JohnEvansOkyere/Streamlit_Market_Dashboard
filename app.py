@@ -127,21 +127,29 @@ with col2:
 
 #CREATING AND DOWNLOADING THE FILTERED DATA
 #DOWNLOAD FILTERED DATA FOR CATEGORY SALES
+# Category Sales
 cl1, cl2 = st.columns((2))
+
 with cl1:
     with st.expander("Category_ViewData"):
-        st.write(category_df.style.background_gradient(cmap="Blues"))
-        csv = category_df.to_csv(index = False).encode("utf-8")
-        st.download_button("Download Data", data=csv, file_name="Category.csv", mime="text/csv", help="Click here or download the data as CSV file")
+        if not category_df.empty:
+            st.write(category_df.style.background_gradient(cmap="Blues"))
+            csv = category_df.to_csv(index=False).encode("utf-8")
+            st.download_button("Download Data", data=csv, file_name="Category.csv", mime="text/csv", help="Click here to download the data as CSV file")
+        else:
+            st.write("No data available to download for Category.")
 
-#DOWNLOAD FILTERED DATA FOR REGION SALES
-
+# Region Sales
 with cl2:
-    with st.expander("Region_ViewDate"):
-        region = filtered_df.groupby(by = 'Region', as_index=False,)['Sales'].sum()
-        st.write(region.style.background_gradient(cmap="Oranges"))
-        csv = region.to_csv(index = False).encode("utf-8")
-        st.download_button("Download Data",data=csv, file_name="Region.csv", mime= "text/scv", help="Click here to download the data as csv file " )
+    with st.expander("Region_ViewData"):
+        region = filtered_df.groupby(by='Region', as_index=False)['Sales'].sum()
+        if not region.empty:
+            st.write(region.style.background_gradient(cmap="Oranges"))
+            csv = region.to_csv(index=False).encode("utf-8")
+            st.download_button("Download Data", data=csv, file_name="Region.csv", mime="text/csv", help="Click here to download the data as CSV file")
+        else:
+            st.write("No data available to download for Region.")
+
 
 #FILTERED USING TIME SERIES
 filtered_df["month_year"] = filtered_df["Order Date"].dt.to_period("M")
