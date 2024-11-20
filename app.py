@@ -13,6 +13,7 @@ st.set_page_config(page_title='JEOCO DASHBOARD', page_icon=":bar_chart:", layout
 st.title(":bar_chart: JEOCO DASHBOARD")
 st.markdown('<style>div.block-container{padding-top :2rem;}</style>', unsafe_allow_html=True) #TITLE SPACING
 
+
 #DOWNLOADING NEW DATA SET
 f1 = st.file_uploader(':file_folder: Upload a file', type=['csv','txt','xlsx', 'xls'])  
 
@@ -89,24 +90,24 @@ else:
 #CALCULATING FOR THE METRICS DATA
 
 
-# metric1,metric2, metric3 = st.columns((3))
-# with metric1:
-#     st.subheader("Total Quantity")
-#     total_quatity = filtered_df["Quantity"].sum()
-#     st.metric(label="Total Quantity", value=total_quatity,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
+metric1,metric2, metric3 = st.columns((3))
+with metric1:
+    st.subheader("Total Quantity")
+    total_quatity = filtered_df["Quantity"].sum()
+    st.metric(label="Total Quantity", value=total_quatity,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
 
-# with metric2:
-#     st.subheader("Gross Revenue")
-#     total_sales = filtered_df["Sales"].sum()
-#     formatted_sales = millify(total_sales)
-#     st.metric(label="Gross Revenue", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
+with metric2:
+    st.subheader("Gross Revenue")
+    total_sales = filtered_df["Sales"].sum()
+    formatted_sales = millify(total_sales)
+    st.metric(label="Gross Revenue", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
-# with metric3:
-#     st.subheader("Gross Profit")
-#     total_sales = filtered_df["Profit"].sum()
-#     formatted_sales = millify(total_sales)
-#     st.metric(label="Gross Profit", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
+with metric3:
+    st.subheader("Gross Profit")
+    total_sales = filtered_df["Profit"].sum()
+    formatted_sales = millify(total_sales)
+    st.metric(label="Gross Profit", value=formatted_sales,delta_color="normal",help="This is the total Sales", label_visibility="visible" )
 
 
 
