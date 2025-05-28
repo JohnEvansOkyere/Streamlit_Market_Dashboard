@@ -1,89 +1,119 @@
-# Iris Flower Prediction App
+# Sales Analytics Dashboard
 
-A Streamlit web application that predicts the type of Iris flower (Setosa, Versicolor, or Virginica) based on user-input parameters using a Random Forest Classifier.
+
+A powerful, interactive sales analytics dashboard built with Streamlit that provides insights into sales performance across regions, categories, and time periods.
 
 ## Features
 
-- Interactive sliders for inputting flower measurements:
-  - Sepal length (cm)
-  - Sepal width (cm)
-  - Petal length (cm)
-  - Petal width (cm)
-- Real-time prediction of Iris species
-- Probability distribution across all possible species
-- Clean, responsive UI with custom styling
+- 📊 **Interactive visualizations**: Bar charts, pie charts, treemaps, and scatter plots
+- ⏳ **Time series analysis**: Track sales trends over time
+- 🔍 **Multi-level filtering**: Filter by region, state, and city
+- 📥 **Data export**: Download filtered data in CSV format
+- 📈 **Key metrics**: Gross revenue, profit, and quantity at a glance
+- 📱 **Responsive design**: Works on desktop and mobile devices
 
-## Technologies Used
+## Prerequisites
 
-- Python 3.x
-- Streamlit (for web interface)
-- Scikit-learn (for machine learning model)
-- Pandas (for data handling)
-- NumPy (for numerical operations)
+- Python 3.8
+- pip package manager
 
 ## Installation
 
-1. Clone this repository:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/okyerevansjohn/iris-flower-prediction.git
-   cd iris-flower-prediction
-   ```
+   git clone https://github.com/okyerevansjohn/sales-analytics-dashboard.git
+   cd sales-analytics-dashboard
 
-2. Create and activate a virtual environment (recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
 
-3. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
+Create and activate a virtual environment (recommended):
 
-## Usage
+bash
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install the required packages:
 
-1. Run the Streamlit app:
-   ```bash
-   streamlit run app.py
-   ```
+bash
+pip install -r requirements.txt
+Usage
+Place your sales data CSV file in the data/ directory. A sample file sample_sales_data.csv is included.
 
-2. The app will open in your default web browser.
+Run the Streamlit app:
 
-3. Adjust the sliders in the sidebar to input flower measurements.
+bash
+streamlit run app.py
+The app will open in your default web browser. Upload the CSV file when prompted.
 
-4. View the predicted Iris species and prediction probabilities in the main window.
+Use the sidebar filters to explore your data:
 
-## File Structure
+Select date ranges
 
-```
-iris-flower-prediction/
+Filter by region, state, and city
+
+View different visualizations
+
+Click on any chart to see more details or download the data.
+
+File Structure
+sales-analytics-dashboard/
 ├── app.py                # Main application file
+├── data/
+│   └── sample_sales_data.csv  # Sample dataset
 ├── README.md             # This file
 ├── requirements.txt      # List of dependencies
-```
 
-## Requirements
+Data Requirements
+For optimal performance, your CSV file should include these columns (or similar):
 
-- Python 3.7+
-- streamlit
-- scikit-learn
-- pandas
-- numpy
+Order Date (in a recognizable date format)
 
-## Contributing
+Region
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+State
 
-## License
+City
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Category
 
-## Author
+Sub-Category
 
+Sales (numeric values)
+
+Profit (numeric values)
+
+Quantity (numeric values)
+
+Sample Data
+A sample dataset is included in the data/ directory. The file contains mock sales data with the required columns.
+
+Customization
+You can easily customize:
+
+Colors by modifying the cmap parameter in style functions
+
+Chart types by changing the Plotly Express functions
+
+Layout by adjusting the Streamlit column configurations
+
+Troubleshooting
+If you encounter issues:
+
+Ensure your CSV file is properly formatted
+
+Check that date columns are in a recognizable format
+
+Verify all required columns are present
+
+Check the console for error messages
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Author
 John Evans Okyere
 
-## Acknowledgments
+Acknowledgments
+Streamlit for the amazing dashboard framework
 
-- Iris dataset provided by scikit-learn
-- Streamlit for the amazing framework
-- Scikit-learn for the machine learning tools
+Plotly for interactive visualizations
+
+Pandas for data manipulation
