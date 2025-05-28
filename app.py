@@ -8,8 +8,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Page setup
-st.set_page_config(page_title='SAMPLE', page_icon=":bar_chart:", layout='wide')
-st.title(":bar_chart: SAMPLE DASHBOARD")
+st.set_page_config(page_title='E-commerce Dashboard', page_icon=":bar_chart:", layout='wide')
+st.title(":bar_chart: E-COMMERCE DASHBOARD")
 st.markdown('<style>div.block-container{padding-top :2rem;}</style>', unsafe_allow_html=True)
 
 # File upload
