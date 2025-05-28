@@ -1,5 +1,13 @@
 # Sales Analytics Dashboard
 
+## Getting Started
+
+**Before viewing the dashboard visuals**, please upload the sample CSV file included in the project's `data` directory. The file `sample_sales_data.csv` contains all required columns for the dashboard to function properly.
+
+To upload:
+1. Click the "Browse files" button or drag-and-drop the CSV file
+2. Select `data/sample_sales_data.csv` from your local copy of this repository
+3. The dashboard will automatically load and display your data
 
 A powerful, interactive sales analytics dashboard built with Streamlit that provides insights into sales performance across regions, categories, and time periods.
 
